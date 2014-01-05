@@ -117,13 +117,14 @@ class Migration(SchemaMigration):
         db.add_column('maps_map', 'metadata_xml', self.gf('django.db.models.fields.TextField')(default='<gmd:MD_Metadata xmlns:gmd="http://www.isotc211.org/2005/gmd"/>', null=True, blank=True), keep_default=False)
 
         # Adding field 'Map.popular_count'
-        db.add_column('maps_map', 'popular_count', self.gf('django.db.models.fields.IntegerField')(default=0), keep_default=False)
+        #db.add_column('maps_map', 'popular_count', self.gf('django.db.models.fields.IntegerField')(default=0), keep_default=False)
 
         # Adding field 'Map.share_count'
         db.add_column('maps_map', 'share_count', self.gf('django.db.models.fields.IntegerField')(default=0), keep_default=False)
 
         # Changing field 'Map.title'
-        db.alter_column('maps_map', 'title', self.gf('django.db.models.fields.CharField')(max_length=255))
+        #db.alter_column('maps_map', 'title', self.gf('django.db.models.fields.CharField')(max_length=255))
+        db.add_column('maps_map', 'title', self.gf('django.db.models.fields.CharField')(max_length=255, default='SET TITLE'))
 
 
     def backwards(self, orm):

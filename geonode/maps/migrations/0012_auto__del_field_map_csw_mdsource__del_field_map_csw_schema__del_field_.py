@@ -75,7 +75,7 @@ class Migration(SchemaMigration):
         db.delete_column('maps_map', 'id')
 
         # Deleting field 'Map.category'
-        db.delete_column('maps_map', 'category_id')
+        #db.delete_column('maps_map', 'category_id')
 
         # Deleting field 'Map.spatial_representation_type'
         db.delete_column('maps_map', 'spatial_representation_type')
